@@ -1,0 +1,26 @@
+// Repeat a String
+<script>
+    function repeat(str , num) {
+        "use strict";
+
+        var holderArray = []
+        // Create an empty array to store the strings
+        if(num < 0){
+            return '';
+        }else{
+            for(var i = 0; i<num ; i++){
+                holderArray.push(str)
+            }
+            // Add srings based on how times requested
+            str = holderArray.join(""); 
+            // Turn array of strings into a single String
+            return str;
+        }
+    }
+
+
+    // test code 
+    var test = repeat("*", 1)
+    console.log(test)
+
+</script>

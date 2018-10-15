@@ -1,0 +1,31 @@
+// Missing Letters
+<script>
+    function fearNotLetter(str) {
+        "use strict";
+
+        var alphabe = "abcdefghijklmnopqrstuvwxyz";
+        alphabe = alphabe.split("");
+        str = str.split("");
+
+
+        
+        if(str[0] != 'a'){
+                return undefined;
+            }
+
+        for(var i=0;i<str.length;i++){
+
+
+            if(str[i] != alphabe[i]){
+                return alphabe[i];
+            }
+        }
+
+     
+
+        return str;
+    }
+    var test = fearNotLetter("abce");
+
+    console.log(test)
+</script>

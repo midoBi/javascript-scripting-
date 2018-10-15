@@ -1,0 +1,12 @@
+// Map the Debris
+<script>
+    function orbitalPeriod(arr){
+        var GM = 398600.4418;
+        var earhRaduis = 6367.4447;
+        var result = Math.round(2*Math.PI * Math.sqrt(Math.pow(earhRaduis+arr[0].avgAlt,3)/GM));
+        var newArray = [{name : arr[0].name , orbitalPeriod : result}]
+        return newArray;
+    }
+
+console.log(orbitalPeriod([{name : "Spuntnik",avgAlt : 35873.5553}]))
+</script>

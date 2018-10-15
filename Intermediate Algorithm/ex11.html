@@ -1,0 +1,58 @@
+// Steamroller
+<script>
+    function steamrollerArray(arr) {
+        "use strict";
+        var oneArray = [];
+
+
+        function flatten(arr){
+            arr.forEach(element => {
+                if(!Array.isArray(element)){
+                    oneArray.push(element)
+                }
+                else {
+                    flatten(element)
+                }
+            });
+        }
+
+
+
+        return arr;
+    }
+
+   console.log(steamrollerArray([1, [2], [3, [[4]]]]))
+    function test(color) {
+        // use object literal to find fruits in color
+        const fruitColor = {
+            red: ['apple', 'strawberry'],
+            yellow: ['banana', 'pineapple'],
+            purple: ['grape', 'plum']
+        };
+
+        return fruitColor[color] || [];
+    }
+    function test(color) {
+        // use Map to find fruits in color
+        const fruitColor = new Map()
+            .set('red', ['apple', 'strawberry'])
+            .set('yellow', ['banana', 'pineapple'])
+            .set('purple', ['grape', 'plum']);
+
+        return fruitColor.get(color) || [];
+    }
+
+    function test(color) {
+        // use Array filter to find fruits in color
+        const fruits = [
+            { name: 'apple', color: 'red' },
+            { name: 'strawberry', color: 'red' },
+            { name: 'banana', color: 'yellow' },
+            { name: 'pineapple', color: 'yellow' },
+            { name: 'grape', color: 'purple' },
+            { name: 'plum', color: 'purple' }];
+
+        return fruits.filter(f => f.color == color);
+    }
+
+</script>

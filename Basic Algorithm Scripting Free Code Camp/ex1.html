@@ -1,0 +1,19 @@
+// Title Case a Sentence JavaScript
+<script>
+    function titleCase(str) {
+        "use strict";
+
+        var arrayOfString = str.split(" ");
+
+        for (var i = 0; i < arrayOfString.length; i++) {
+            var placeHolder = arrayOfString[i]
+            var upLetter = placeHolder.charAt(0).toUpperCase()
+            placeHolder = placeHolder.slice(1, placeHolder.length).toLowerCase()
+            arrayOfString[i] = upLetter.concat(placeHolder)
+        }
+        str = arrayOfString.join(' ');
+        return str;
+    }
+    console.log(titleCase("hello mehdi birouk")
+    )
+</script>

@@ -1,0 +1,13 @@
+{
+  "name": "",
+  "version": "",
+  "scripts": {
+    "start": "nodemon --experimental-modules index.mjs"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}

@@ -1,0 +1,52 @@
+// Friendly Date Ranges Part 1
+<script>
+    function makeFriendlyDates(arr) {
+        // array to return 
+        var dataArray = [];
+
+        var date1 = arr[0].split("-");
+        var date2 = arr[1].split("-");
+
+        date1[1] = Number(date1[1]) - 1;
+        date2[1] = Number(date2[1]) - 1;
+        date1[2] = Number(date1[2]);
+        date2[2] = Number(date2[2]);
+
+        var monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+
+        if(date1[1] === date2[1]){
+            dataArray.push(monthNames[date1[1]] + " "+ dayChange(date1[2]));
+            dataArray.push(dayChange(date2[2]))
+            return  dataArray;
+        }else{
+            dataArray.push(monthNames[date1[1]] + " "+dayChange(date1[2]))
+            dataArray.push(monthNames[date2[1]] + " "+dayChange(date2[2]))
+
+            return dataArray
+        }
+    }
+
+    function dayChange(day)
+    {
+        if(day === 1)
+        {
+            return day +'st'
+        }
+        else if(day === 3){
+            return day + 'rd';
+        }
+        else 
+        {
+            return day + "th"
+        }
+    }
+
+
+
+    var test = makeFriendlyDates(['2016-07-01', '2016-07-04'])
+
+    console.log(test)
+</script>

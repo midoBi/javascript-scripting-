@@ -1,0 +1,40 @@
+// DNA Pairing
+<script>
+    function pair(str) {
+        "use strict";
+
+        str = str.toUpperCase();
+        str = str.split("");
+
+        var placeHolderArray = [];
+        for(var i = 0;i<str.length; i++){
+            switch(str[i]){
+                case "G":
+                {
+                    placeHolderArray.push(["G","C"]);
+                    break;
+                }
+                case "A":
+                {
+                    placeHolderArray.push(["A","T"]);
+                    break;
+                }
+                case "T":
+                {
+                    placeHolderArray.push(["T","A"]);
+                    break;
+                }
+                case "C":
+                {
+                    placeHolderArray.push(["C","G"]);
+                    break;
+                }
+            }
+        }
+        str = placeHolderArray;
+        return str;
+    }
+    var test = pair("ATCGA");
+
+    console.log(test)
+</script>

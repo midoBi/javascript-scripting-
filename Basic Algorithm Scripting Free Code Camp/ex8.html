@@ -1,0 +1,34 @@
+// Mutations JavaScript
+<script>
+    function mutation(arr) {
+        "use strict"
+
+        var word1 = arr[0].toLowerCase();
+        var word2 = arr[1].toLowerCase();
+        // Lower case both string inputs for comparison purpose
+
+
+        for (var i = 0; i < word2.length; i++) {
+            /*
+                Length of 2nd word is important because 
+                we are itterating through its letters to see if they are in word
+            */
+            var value = word1.indexOf(word2[i]);
+            // Value holder for character
+
+            if (value === -1) {
+                return false;
+                // if -1 it meaning its not contained in word 
+            }
+        }
+
+        return true;
+
+    }
+
+
+    // test code 
+    var test = mutation(["Alien", "lien"])
+    console.log(test)
+
+</script>

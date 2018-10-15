@@ -1,0 +1,30 @@
+// Symmetric Difference
+<script>
+  function sym(args){
+    // Slice all arguments into a single array 
+    var argsArray = [].slice.call(arguments);
+    // Callback function to iterate hrough multiple arrays for reduce 
+
+    function symDiff(arr1,arr2){
+      // Create array to store unique values 
+      var uniqueValues = [];
+      for(var i = 0; i<arr1.length;i++){
+        if(arr2.indexOf(arr1[i]) < 0 && uniqueValues.indexOf(arr1[i]) < 0){
+          uniqueValues.push(arr1[i])
+        }
+      }
+
+      arr2.forEach(element => {
+        if(arr1.indexOf(element) < 0 && uniqueValues.indexOf(element) < 0) {
+          uniqueValues.push(element)
+        }
+      });
+      return uniqueValues;
+    }
+   
+      return argsArray.reduce(symDiff);
+  }
+
+  console.log(sym([1 ,2,3],[5,2,1,4]));
+
+</script>

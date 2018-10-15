@@ -1,0 +1,65 @@
+// Cash Register | JavaScript Algorithms and Data Structure Projects
+<script>
+
+    const REGISTER_STATUS = {
+        closed : 'CLOSED',
+        insufficientFunds : 'INSUFFICIENT_FUNDS',
+        open : 'OPEN'
+    }
+
+    function checkCashRegister(price, cash, cid) {
+        let cashRegister = {status : '' , change : cid};
+
+        const changeNeeded = parseFloat(cash - price).toFixed(2);
+
+        const changeAvailable = geTotalCashRegisterChange(cid);
+
+        cashRegister.status = geTotalCashRegisterStatus(changeNeeded, changeAvailable);
+
+
+        if(cashRegister.status == REGISTER_STATUS.insufficientFunds) {
+            cashRegister.change = [];
+
+            return cashRegister;
+        }
+
+        cashRegister.change = getCustomerChange(changeNeeded , cid);
+
+    }
+    function getCustomerChange(changeNeeded , changeInDrawer) {
+        const change = [];
+    }
+    function geTotalCashRegisterStatus(changeNeeded, changeAvailable) {
+
+        if(Number(changeNeeded) > Number(changeAvailable)) {
+            return REGISTER_STATUS.insufficientFunds;
+        }
+        if(Number(changeNeeded) < Number(changeAvailable)) {
+            return REGISTER_STATUS.open;
+        }
+
+        return REGISTER_STATUS.closed;
+    }
+    function geTotalCashRegisterChange(changeInDrawer){
+        let total = 0;
+
+        for(let change of changeInDrawer) {
+            let changeValue = change[1];
+            total += changeValue;
+        }
+        return total.toFixed(2);
+    }
+    var test = checkCashRegister(3.26, 100, [
+        ["PENNY", 1.01],
+        ["NICKEL", 2.05],
+        ["DIME", 3.1],
+        ["QUARTER", 4.25],
+        ["ONE", 90],
+        ["FIVE", 55],
+        ["TEN", 20],
+        ["TWENTY", 60],
+        ["ONE HUNDRED", 100]
+    ]);
+
+    console.log(test)
+</script>

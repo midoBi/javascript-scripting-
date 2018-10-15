@@ -1,0 +1,24 @@
+// Make a Person 
+<script>
+    var Person = function(firstAndLast){
+        var array = firstAndLast.split(" ");
+
+        console.log(array)
+
+        this.getFirstName = function() {
+            return array[0];
+        }
+
+        this.getLastName = function() {
+            return array[1];
+        }
+        this.setFirstName = function(first) {
+            array[0] = first;
+            array[0] = first;
+        }
+    }
+    var bob = new Person('Bob Ross');
+
+    bob.getFirstName();
+    bob.getLastName();
+</script>

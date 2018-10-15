@@ -1,0 +1,24 @@
+// Confirm the Ending
+<script>
+    function end(str, target) {
+        "use strict";
+
+        var start = str.length - (target.length)
+        // Var for just comparing end of string
+
+
+        if (str.substr(start, target.lengh) === target) {
+            // compares end of string with the target string 
+            return true
+        } else {
+            return false;
+
+        }
+    }
+
+
+    // test code 
+    var test = end("Basian", "n")
+    console.log(test)
+
+</script>
